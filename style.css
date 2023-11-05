@@ -1,0 +1,48 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+.animated-card{
+    width: 350px;
+    height: 500px;
+    position: relative;
+    perspective: 2000px;
+    cursor: pointer;
+}
+.card-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.wrapper{
+    transition: all 0.3s;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+.animated-card:hover .wrapper{
+    transform: perspective(800px) translateY(-5%) rotateX(45deg) translateZ(0);
+    
+}
+.prabhas{
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: 1;
+}
+.animated-card:hover .prabhas{
+    opacity: 1;
+    transform: translate3d(0%, -25%, 80px);
+}
